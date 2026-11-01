@@ -1,13 +1,7 @@
-/*
-  Cliente HTTP: el ÚNICO lugar del front que habla con la API.
-  Ningún componente usa fetch directamente; todos pasan por acá.
-  Así, si cambia la dirección de la API o la forma de manejar errores,
-  se modifica un solo archivo.
-*/
-
-// La dirección de la API viene de una variable de entorno (archivo .env),
-// para poder usar una en local y otra en producción sin tocar el código.
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000/api'
+// Por defecto usa la ruta relativa /api: en local la atiende el proxy de Vite
+// y en Vercel la atiende el backend (ver vercel.json).
+// VITE_API_URL solo hace falta si el back está en otro dominio.
+const API_URL = import.meta.env.VITE_API_URL || '/api'
 
 // Si VITE_USAR_MOCKS=true, el front usa datos de prueba y no llama a la API.
 export const USAR_MOCKS = import.meta.env.VITE_USAR_MOCKS === 'true'
