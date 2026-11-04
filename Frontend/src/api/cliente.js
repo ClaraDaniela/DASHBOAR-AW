@@ -3,7 +3,7 @@ import { obtenerToken, cerrarSesion } from './sesion'
 // Por defecto usa la ruta relativa /api: en local la atiende el proxy de Vite
 // y en Vercel la atiende el backend (ver vercel.json).
 // VITE_API_URL solo hace falta si el back está en otro dominio.
-export const API_URL = import.meta.env.VITE_API_URL || 'https://dashboar-aw.onrender.com'
+export const API_URL = import.meta.env.VITE_API_URL || 'https://dashboar-aw.onrender.com/api'
 
 // Si VITE_USAR_MOCKS=true, el front usa datos de prueba y no llama a la API.
 export const USAR_MOCKS = import.meta.env.VITE_USAR_MOCKS === 'true'
